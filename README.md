@@ -71,7 +71,7 @@ Textures: Mostly CC0 (by Ammoth)
 * 2020-01-03  V2.2 dying player bugfix (when fly mode is disabled)
 * 2020-03-16  V2.3 switched to 16 bit textures (by tuedel/Ammoth) and crane upright time increased to 5 real days
 * Further updates: https://github.com/minetest-mods/towercrane/commits/master/
-// Fryziu 
+* // Fryziu 
 * 2026-10-24 Gemini 3.8 Flash
 
 ## Luanti 5.x & VoxeLibre Compatibility Patch (Changelog)
