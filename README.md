@@ -73,4 +73,29 @@ Textures: Mostly CC0 (by Ammoth)
 * 2020-01-03  V2.2 dying player bugfix (when fly mode is disabled)
 * 2020-03-16  V2.3 switched to 16 bit textures (by tuedel/Ammoth) and crane upright time increased to 5 real days
 * Further updates: https://github.com/minetest-mods/towercrane/commits/master/
+// Fryziu 
+* 2026-10-24 Gemini 3.8 Flash
+
+## Luanti 5.x & VoxeLibre Compatibility Patch (Changelog)
+
+This fork includes several modernizations, bug fixes, and out-of-the-box support for the **VoxeLibre** (formerly MineClone2) game and modern **Luanti (Minetest 5.8+)** engine versions.
+
+### 1. VoxeLibre / MineClone Integration
+* **Native Recipes & Crafting Guide:** Added native support for `mcl_core:iron_ingot` and `mcl_dyes:yellow`, alongside `group:dye_yellow`. Recipes are now registered at load-time so they are fully indexed in VoxeLibre's Recipe Book (`mcl_craftguide`).
+* **Hand-Digging Protection:** Added `handy = 1`, `pickaxey = 2`, and `material_metal = 1` groups along with explicit `drop = "towercrane:base"`. Digging the base block with bare hands will now properly drop the item instead of destroying it without a drop.
+* **Explosion & Accidental Dig Resistance:** Mast, arm, and balance blocks are now immune to explosions (`on_blast = function() end`) and accidental direct digging (`can_dig = function() return false end`), preserving structure integrity until the base is intentionally removed.
+
+### 2. Luanti 5.x Engine & UI Modernization
+* **Fixed Switch Render Warning:** Fixed the invalid `drawtype = "node"` typo in `control.lua` (switched to `normal`), eliminating engine startup warnings and switch texture glitches.
+* **Modern Formspec UI:** Rewritten dialog formspec using `formspec_version[4]`, fixing overlapping input fields and buttons on modern Luanti resolutions.
+* **Config Parsing:** Modernized `config.lua` boolean retrieval via `minetest.settings:get_bool("towercrane_recipe", true)`.
+* **Dependency Ordering:** Updated `mod.conf` with explicit `optional_depends` (`mcl_core`, `mcl_dye`, `default`, etc.) ensuring consistent load order across all game environments.
+
+### 3. Stability & Performance Improvements
+* **Nil-Pointer Safety:** Added strict nil checks in `get_my_crane_pos` to prevent rare `attempt to index local 'pos' (a nil value)` server crashes.
+* **Non-Destructive Form Closing:** Pressing ESC or closing the dimension prompt without clicking "Build" no longer dismantles an existing crane.
+* **Flexible Dimension Parsing:** The size prompt now accepts spaces, commas, and 'x' separators (e.g. `12,12`, `12, 12`, `16x16`, `20 20`).
+* **Disk I/O Optimization:** Replaced the continuous 1-second SQLite node metadata write loop during player flight with an in-memory cache (`Last_known_positions`), drastically eliminating storage wear and I/O lag in Docker/cloud environments.
+* **Physics Lock Recovery:** Ensured player physics locks and operator states are safely cleared upon joining the server, preventing players from being permanently unable to operate cranes after unexpected disconnects or crashes.
+
 
