@@ -1,4 +1,4 @@
-# Tower Crane Mod
+# Tower Crane Mod 2026 (Luanti 5.1x)
 
 In order to simplify the construction of buildings, the crane forms a construction area in which the player gets fly privs.
 
