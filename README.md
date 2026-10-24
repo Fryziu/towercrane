@@ -2,9 +2,7 @@
 
 In order to simplify the construction of buildings, the crane forms a construction area in which the player gets fly privs.
 
-Browse on: ![GitHub](https://github.com/minetest-mods/towercrane)
-
-Download: ![GitHub](https://github.com/minetest-mods/towercrane/archive/master.zip)
+Browse on: ![GitHub]([https://github.com/minetest-mods/towercrane](https://github.com/Fryziu/towercrane))
 
 The crane can be completely assembled by setting only the base block.
 The size of the crane (which is the construction area) and the rope length can be configured.
