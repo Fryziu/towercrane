@@ -76,7 +76,7 @@ Textures: Mostly CC0 (by Ammoth)
 
 ## Luanti 5.x & VoxeLibre Compatibility Patch (Changelog)
 
-This fork includes several modernizations, bug fixes, and out-of-the-box support for the **VoxeLibre** (formerly MineClone2) game and modern **Luanti (Minetest 5.8+)** engine versions.
+This fork includes several modernizations, bug fixes, and out-of-the-box support for the **VoxeLibre** (formerly MineClone2) game and modern **Luanti (Minetest 5.1+)** engine versions.
 
 ### 1. VoxeLibre / MineClone Integration
 * **Native Recipes & Crafting Guide:** Added native support for `mcl_core:iron_ingot` and `mcl_dyes:yellow`, alongside `group:dye_yellow`. Recipes are now registered at load-time so they are fully indexed in VoxeLibre's Recipe Book (`mcl_craftguide`).
